@@ -1,0 +1,48 @@
+#code_area{
+    width: 372px;
+    height: auto;
+    position: relative;
+}
+#canvas{
+    z-index: 1;
+}
+#block{
+    z-index: 2;
+    position: absolute;
+    top:0;
+    left:0;
+    margin: 0 auto;
+    -webkit-filter: contrast(1.4);
+    filter: contrast(1.4);
+}
+#code_control{
+    width: 372px;
+    height: 46px;
+    line-height: 46px;
+    border: 1px solid #eaebef;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    border-radius: 2px;
+}
+#code_slide{
+    position: absolute;
+    left: -1px;
+    top:-1px;
+    width: 45px;
+    height: 45px;
+    border: 1px solid #cccccc;
+    z-index: 999;
+    -webkit-box-shadow:0 0 10px #7b7b7b;
+    -moz-box-shadow:0 0 10px #7b7b7b;
+    box-shadow:0 0 10px #7b7b7b;
+    cursor: all-scroll;
+    background: url("./code_right.png") center center;
+    background-size:100%100%;
+}
+#code_tips{
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+}

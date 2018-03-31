@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo</title>
+    <link rel="stylesheet" href="super-code.css">
+</head>
+<body>
+<div id="code_area">
+    <canvas width="372" height="228" id="canvas"></canvas>
+    <canvas width="372" height="228" id="block"></canvas>
+    <div id="code_control"><div id="code_slide"></div><span id="code_tips">向右滑动滑块</span></div>
+</div>
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="./super-code.js"></script>
+<script type="text/javascript">
+    var superCode = new superCode({
+        x:Math.floor(Math.random()*100+150),//初始化抠图位置X
+        y:140,//初始化抠图位置Y
+        x_rang1:5,//左误差值
+        x_rang2:5,//右误差值
+        w:42,//抠图宽度
+        r:10,//抠图小圆点半径
+        PI: Math.PI,//圆周率
+        width:'372',//画布宽度
+        height:'228',//画布高度
+        canvas:'canvas',//图片画布
+        block:'block',//拼图画布
+        src:'code.png',//图片路径
+        code_control:'code_control',//控制条id
+        code_slide:'code_slide'//滑块id
+    });
+</script>
+</body>
+</html>
