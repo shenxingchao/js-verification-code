@@ -153,6 +153,7 @@
         var offsetLeft = document.getElementById(this.options.code_slide).style.left.replace('px','');
         if((this.options.x-this.options.x_rang1)<offsetLeft && offsetLeft<(this.options.x+this.options.x_rang2)){
             //验证通过
+            document.getElementById(this.options.code_slide).style.left = 0;
             document.getElementById(this.options.code_slide).style.background = "url('"+ this.options.code_true +"') center center";
             document.getElementById(this.options.code_slide).style.backgroundSize = "100% 100%";
             document.getElementById(this.options.code_tips).innerText = ((this.speed2- this.speed1)/1000).toFixed(1) +"s 验证通过";
