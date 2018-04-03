@@ -19,7 +19,7 @@
     width: 372px;
     height: 46px;
     line-height: 46px;
-    border: 1px solid #eaebef;
+    border: 1px solid #e4e5e9;
     text-align: center;
     position: relative;
     z-index: 1;
@@ -33,9 +33,10 @@
     height: 45px;
     border: 1px solid #cccccc;
     z-index: 999;
-    -webkit-box-shadow:0 0 10px #7b7b7b;
-    -moz-box-shadow:0 0 10px #7b7b7b;
-    box-shadow:0 0 10px #7b7b7b;
+    border-radius: 2px;
+    -webkit-box-shadow:0 0 10px #dedede;
+    -moz-box-shadow:0 0 10px #dedede;
+    box-shadow:0 0 10px #dedede;
     cursor: all-scroll;
     background: url("./code_right.png") center center;
     background-size:100%100%;

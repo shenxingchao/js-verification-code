@@ -20,7 +20,10 @@
             src:'',//图片路径
             code_control:'code_control',//控制条id
             code_slide:'code_slide',//滑块id
-            code_tips:'code_tips'//提示内容id
+            code_tips:'code_tips',//提示内容id
+            code_true:'',//正确图标路径
+            code_error:'',//错误图标路径
+            code_right:'',//右滑图标路径
         },options);
         this.init();
         this.draggable();
@@ -59,7 +62,7 @@
         ctx.globalCompositeOperation = "xor";
         ctx.fill();
     };
-    
+
     superCode.prototype.draggable = function () {
         var obj = this;
         this.superCodeDrag = new superCodeDrag({
@@ -150,7 +153,7 @@
         var offsetLeft = document.getElementById(this.options.code_slide).style.left.replace('px','');
         if((this.options.x-this.options.x_rang1)<offsetLeft && offsetLeft<(this.options.x+this.options.x_rang2)){
             //验证通过
-            document.getElementById(this.options.code_slide).style.background = "url('./code_true.png') center center";
+            document.getElementById(this.options.code_slide).style.background = "url('"+ this.options.code_true +"') center center";
             document.getElementById(this.options.code_slide).style.backgroundSize = "100% 100%";
             document.getElementById(this.options.code_tips).innerText = ((this.speed2- this.speed1)/1000).toFixed(1) +"s 验证通过";
             //禁用拖动
@@ -161,7 +164,7 @@
             //前端刷新抠图位置 也可后端刷新
             this.options.x = Math.floor(Math.random()*(this.options.width-(this.options.w+this.options.r*2)*2) + (this.options.w+this.options.r*2));
             //禁用拖动
-            document.getElementById(this.options.code_slide).style.background = "url('./code_error.png') center center";
+            document.getElementById(this.options.code_slide).style.background = "url('"+ this.options.code_error +"') center center";
             document.getElementById(this.options.code_slide).style.backgroundSize = "100% 100%";
             this.superCodeDrag.unbindMouseDown();
 
@@ -170,14 +173,14 @@
             setTimeout(function () {
                 obj.refresh();
                 //启用拖动
-                document.getElementById(obj.options.code_slide).style.background = "url('./code_right.png') center center";
+                document.getElementById(obj.options.code_slide).style.background = "url('"+ obj.options.code_right +"') center center";
                 document.getElementById(obj.options.code_slide).style.backgroundSize = "100% 100%";
                 obj.superCodeDrag.bindMouseDown();
                 return false;
             },600);
         }
     };
-    
+
     superCode.prototype.refresh = function () {
         var obj = this;
         var img = document.createElement('img');
@@ -198,7 +201,7 @@
     };
 
     superCode.prototype.is_pass = function () {
-         return this.pass;
+        return this.pass;
     };
 
     window.superCode = superCode;
